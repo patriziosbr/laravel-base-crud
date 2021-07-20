@@ -16,12 +16,12 @@
         </thead>
         <tbody>
             @foreach ($comics as $item)
-                <tr>
+                <tr class="">
                     <td>{{$item->id}}</td>
                     <td>{{$item->title}}</td>
                     <td>{{$item->price}}</td>
                     <td>{{$item->type}}</td>
-                    <td>show</td>
+                    <td><a href=" {{ route("comics.show", $item->id) }} " class="btn btn-info">SHOW</a></td>
                     <td>edit</td>
                     <td>delet</td>
                 </tr>
