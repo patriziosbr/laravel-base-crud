@@ -14,7 +14,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::All();
+        $comics = Comic::All(); //sostiture all con paginate(5) numero di records da viusalizzare
+
         return view("comics.index", compact('comics'));
     }
 
