@@ -3,6 +3,7 @@
 @section('content')
     <h1>Comics here</h1>
     {{-- @dump($comics) --}}
+  
 
     <table class="my-4 table table-striped border">
         <thead>
@@ -24,7 +25,7 @@
                     <td><a href=" {{ route("comics.show", $item->id) }} " class="btn btn-info">SHOW</a></td>
                     <td><a href=" {{ route("comics.edit", $item->id) }} " class="btn btn-warning">EDIT</a></td>
                     <td>
-                        <form action="{{ route("comics.destroy", $item->id) }}" method="POST">
+                        <form action="{{ route("comics.destroy", $item->id) }}" method="POST" onsubmit="return confirm('Do you really want to delete the comic?');">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">DELETE</button>
