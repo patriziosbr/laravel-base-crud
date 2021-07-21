@@ -33,6 +33,6 @@
             <textarea id="description" class="form-control" rows="4" cols="50" name="description" placeholder="enter description here"></textarea>
         </div>
 
-        <input type="submit" value="Crea">
+        <input type="submit" value="Add">
     </form>
 @endsection
