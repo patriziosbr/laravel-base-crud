@@ -23,7 +23,13 @@
                     <td>{{$item->type}}</td>
                     <td><a href=" {{ route("comics.show", $item->id) }} " class="btn btn-info">SHOW</a></td>
                     <td><a href=" {{ route("comics.edit", $item->id) }} " class="btn btn-warning">EDIT</a></td>
-                    <td>delet</td>
+                    <td>
+                        <form action="{{ route("comics.destroy", $item->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">DELETE</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
